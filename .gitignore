@@ -1,3 +1,12 @@
+<<<<<<< Updated upstream
 *o
 kernel
 .vscode
+=======
+x86_64-elf/
+.vscode
+.*o
+build/
+iso_root/
+
+>>>>>>> Stashed changes

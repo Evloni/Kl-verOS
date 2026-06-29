@@ -1,6 +1,6 @@
 
-CC   = cross-compiler/bin/x86_64-elf-gcc
-LD   = cross-compiler/bin/x86_64-elf-ld
+CC   = x86_64-elf/bin/x86_64-elf-gcc
+LD   = x86_64-elf/bin/x86_64-elf-ld
 NASM = nasm
 
 CFLAGS  = -Wall -Wextra -std=c23 -nostdlib -ffreestanding \
@@ -37,7 +37,7 @@ $(BUILD)/%.asm.o: src/%.asm Makefile
 kernel: $(OBJS)
 	$(LD) -o $@ -T linker.ld $(OBJS)
 
-build-iso: kernel
+build-iso: clean kernel
 	rm -rf iso_root
 	mkdir -p iso_root/boot/limine iso_root/EFI/BOOT
 	cp -v kernel iso_root/boot/
