@@ -1,4 +1,3 @@
-cross-compiler/
+*o
+kernel
 .vscode
-.*o
-
